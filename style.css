@@ -17,26 +17,25 @@ body {
   margin: 0 auto;
 }
 
-/* Header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
   padding: 10px 20px;
-  height: 70px; /* altura fixa do header */
+  height: 70px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 5px; /* mantém o espaço do layout */
+  gap: 5px;
 }
 
 .logo-image {
-  height: 110px; /* ocupa toda a altura do header sem empurrar nada */
+  height: 110px;
   width: auto;
-  object-fit: contain; /* mantém proporção */
+  object-fit: contain;
   display: block;
 }
 
@@ -44,21 +43,20 @@ body {
   background-color: #01f7ff;
   color: #00040f;
   border: none;
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 14px;
+  padding: 14px 32px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 18px;
   cursor: pointer;
   transition: 0.3s;
-  box-shadow: 0 0 10px #01f7ff66;
+  box-shadow: 0 0 12px #01f7ff66;
 }
 
 .sos-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #01f7ff;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #01f7ff;
 }
 
-/* Main Card */
 .main-card {
   background-color: #0a0f24;
   border-radius: 16px;
@@ -126,7 +124,6 @@ body {
   box-shadow: 0 0 8px #01f7ff;
 }
 
-/* Sensor Cards */
 .sensor-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -175,7 +172,6 @@ body {
   font-size: 20px;
 }
 
-/* Alerts Section */
 .alerts-header {
   display: flex;
   justify-content: space-between;
@@ -206,7 +202,6 @@ body {
   text-shadow: 0 0 8px #01f7ff;
 }
 
-/* Alert Cards */
 .alerts-section {
   margin-top: 50px;
   font-family: 'Segoe UI', sans-serif;
@@ -248,11 +243,8 @@ body {
   border-radius: 14px;
   padding: 25px 20px;
   margin-bottom: 18px;
-  /* Alterado para Grid para permitir o botão de largura total abaixo */
   display: grid;
-  /* Define 3 colunas para o conteúdo original: Ícone, Conteúdo, Botão 'Movimento' */
   grid-template-columns: 50px 1fr auto;
-  /* Espaçamento entre as colunas e linhas */
   gap: 20px 20px;
   align-items: center;
   transition: 0.3s;
@@ -265,7 +257,6 @@ body {
 }
 
 .alert-icon {
-  /* Define o ícone para ocupar a primeira coluna e a primeira linha */
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   width: 50px;
@@ -282,10 +273,8 @@ body {
 }
 
 .alert-content {
-  /* Define o conteúdo para ocupar a segunda coluna e a primeira linha */
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  /* flex: 1; Removido, pois estamos usando Grid */
 }
 
 .alert-title {
@@ -302,7 +291,6 @@ body {
 }
 
 .alert-button {
-  /* Define o botão original para ocupar a terceira coluna e a primeira linha */
   grid-column: 3 / 4;
   grid-row: 1 / 2;
   background-color: #01f7ff;
@@ -322,40 +310,29 @@ body {
   box-shadow: 0 0 14px #01f7ff;
 }
 
-/* NOVO CSS PARA O BOTÃO 'ver imagem' */
-/* NOVO CSS PARA O BOTÃO 'ver imagem' */
 .alert-action-button {
-  /* Faz o botão ocupar todas as colunas (largura total) e a segunda linha */
   grid-column: 1 / -1;
   grid-row: 2 / 3;
-  
-  /* ALTERAÇÃO AQUI: Fundo ciano, texto preto (igual ao botão 'Movimento') */
   background-color: #01f7ff; 
-  border: none; /* Remove a borda, já que o fundo é sólido */
+  border: none;
   color: #00040f; 
-  
   padding: 12px 18px;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  transition: 0.2s ease-in-out; /* Transição mais rápida para o efeito de clique */
+  transition: 0.2s ease-in-out;
   margin-top: 15px;
-  box-shadow: 0 0 8px #01f7ff55; /* Sombra sutil para dar destaque */
+  box-shadow: 0 0 8px #01f7ff55;
 }
 
 .alert-action-button:hover {
-  /* Mantém o brilho sutil no hover */
   box-shadow: 0 0 16px #01f7ff; 
-  /* Adiciona uma pequena elevação para dar a sensação de interatividade */
   transform: translateY(-2px); 
 }
 
-/* NOVO EFEITO DE CLIQUE/PRESSÃO (ACTIVE) */
 .alert-action-button:active {
-  /* Faz o botão parecer "pressionado" quando clicado */
-  transform: translateY(0); /* Volta o botão para a posição original */
-  box-shadow: 0 0 5px #01f7ff; /* Sombra menor */
-  /* Você pode diminuir a opacidade ou o brilho da cor se quiser um feedback mais forte */
-  background-color: #01e1e8; /* Tonalidade um pouco diferente para feedback visual */
+  transform: translateY(0); 
+  box-shadow: 0 0 5px #01f7ff; 
+  background-color: #01e1e8; 
 }
