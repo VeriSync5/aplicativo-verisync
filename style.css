@@ -193,9 +193,12 @@ body {
 .view-all {
   color: #01f7ff;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 20px; 
+  font-weight: 600; 
   transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; 
 }
 
 .view-all:hover {
@@ -211,7 +214,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px; /* aumentei de 20px para 40px */
+  margin-bottom: 40px; 
 }
 
 .alerts-title {
