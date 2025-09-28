@@ -211,7 +211,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px; /* aumentei de 20px para 40px */
 }
 
 .alerts-title {
