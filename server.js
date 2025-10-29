@@ -2,7 +2,7 @@ import express from "express";
 import http from "http";
 import { WebSocketServer } from "ws";
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000; // mudei para 3000 para evitar conflito
 const CROSS_ONLY = true; // só envia ESP → site e site → ESP
 
 const app = express();
@@ -12,7 +12,7 @@ const wss = new WebSocketServer({ server });
 wss.on("connection", (ws, req) => {
     let role = "unknown";
     try {
-        const url = new URL(req.url, `http://${req.headers.host}`);
+        const url = new URL(req.url, "http://localhost");
         const from = (url.searchParams.get("from") || "").toLowerCase();
         if (from === "esp" || from === "site") role = from;
     } catch {}

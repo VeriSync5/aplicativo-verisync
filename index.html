@@ -409,18 +409,19 @@
     </div>
 
     <script>
-        // Conexão com WebSocket (site → servidor)
-        const ws = new WebSocket("ws://aplicativo-verisync.vercel.app:8080/?from=site");
-
+        const ws = new WebSocket("wss://aplicativo-verisync.vercel.app:3000/?from=site");
+        
+        ws.onopen = () => console.log("Conectado ao servidor WebSocket!");
+        
         ws.onmessage = (event) => {
             const data = JSON.parse(event.data);
-
+        
             // Atualiza card principal do sistema
             if (data.sensor === "sistema") {
                 const circulo = document.querySelector(".circulo-status");
                 const subtitulo = document.querySelector(".subtitulo-principal");
                 const ponto = document.querySelector(".ponto-status");
-
+        
                 if (data.status) {
                     circulo.style.backgroundColor = "#01f7ff";
                     ponto.style.backgroundColor = "#01f7ff";
@@ -431,14 +432,14 @@
                     subtitulo.textContent = "Sistema Inativo";
                 }
             }
-
+        
             // Atualiza cards dos sensores
             if (data.sensor === "movimento") {
                 document.querySelector(".grade-sensores .caixa-sensor:nth-child(1) .status-sensor").textContent = data.status ? "ATIVO" : "INATIVO";
             } else if (data.sensor === "gas") {
                 document.querySelector(".grade-sensores .caixa-sensor:nth-child(2) .status-sensor").textContent = data.status ? "ATIVO" : "INATIVO";
             }
-
+        
             // Adiciona alerta na lista
             if (data.sensor === "movimento" || data.sensor === "gas") {
                 const areaAlertas = document.querySelector(".area-alertas");
@@ -455,7 +456,8 @@
                 areaAlertas.appendChild(alerta);
             }
         };
-    </script>
+        </script>
+        
 
 
 
