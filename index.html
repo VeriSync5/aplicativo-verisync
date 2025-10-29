@@ -409,7 +409,8 @@
     </div>
 
     <script>
-        const ws = new WebSocket("wss://aplicativo-verisync.vercel.app/?from=site");
+        // Conexão com WebSocket (site → servidor)
+        const ws = new WebSocket("ws://aplicativo-verisync.vercel.app:8080/?from=site");
 
         ws.onmessage = (event) => {
             const data = JSON.parse(event.data);
@@ -455,6 +456,7 @@
             }
         };
     </script>
+
 
 
 </body>
